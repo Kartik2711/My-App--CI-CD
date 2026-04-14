@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "Hello Kartik 🚀 Git Project Working!"
+    return "Hello test 🚀 Git Project Working!"
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=True)

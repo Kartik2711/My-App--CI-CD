@@ -2,7 +2,7 @@
 
 set -e
 
-cd /home/ec2-user/myapp   # MUST match appspec.yml
+cd /home/ec2-user/MY-git-project  # MUST match appspec.yml
 
 echo "📦 Install dependencies"
 pip3 install -r requirements.txt

@@ -3,10 +3,10 @@ os: linux
 
 files:
   - source: /
-    destination: /home/ec2-user/my-git-project
+    destination: /home/ec2-user/MY-git-project
 
 hooks:
-  AfterInstall:
-    - location: deploy.sh
+  ApplicationStart:
+    - location: scripts/start.sh
       timeout: 300
       runas: ec2-user

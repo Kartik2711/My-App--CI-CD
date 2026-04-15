@@ -1,16 +1,12 @@
 #!/bin/bash
 
-set -e
+cd /home/ec2-user/My-App--CI-CD
 
-cd /home/ec2-user/MY-git-project  # MUST match appspec.yml
-
-echo "📦 Install dependencies"
+echo "Installing dependencies"
 pip3 install -r requirements.txt
 
-echo "🛑 Stop old app"
-pkill -f app.py || true
+echo "Stopping old app"
+pkill -f app.py
 
-echo "🚀 Start Flask app"
+echo "Starting new app"
 nohup python3 app.py > output.log 2>&1 &
-
-echo "✅ Deployment completed"

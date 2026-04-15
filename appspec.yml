@@ -1,13 +1,17 @@
 version: 0.0
 os: linux
 
-files:
-  - source: /
-    destination: /home/ec2-user/My-App--CI-CD
-    overwrite: true
-
 hooks:
+  BeforeInstall:
+    - location: scripts/cleanup.sh
+      timeout: 300
+      runas: ec2-user
+
   AfterInstall:
     - location: scripts/deploy.sh
       timeout: 300
       runas: ec2-user
+
+files:
+  - source: /
+    destination: /home/ec2-user/My-App--CI-CD
